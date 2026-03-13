@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora</title>
+    
+    <!-- Vinculación del manifiesto para PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f4f4f4">
+    
+    <!-- Meta tags para iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Calculadora">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div id="settings-trigger" onclick="toggleSettings()">
+        <i data-lucide="eye" size="24"></i>
+    </div>
+
+    <div id="config-modal">
+        <div class="config-box">
+            <h2 style="text-align: center;">Predicción Final</h2>
+            <input type="number" id="target-result" value="8596473">
+            <p style="font-size: 13px; color: #666;">
+                <b>Instrucciones:</b><br>
+                1. Activa el modo 'Toxic' presionando <b>AC</b> durante 3 segundos.<br>
+                2. Realiza la cuenta con el público.<br>
+                3. En la última suma, los números que el espectador presione serán reemplazados por el valor necesario para llegar al objetivo.
+            </p>
+            <button style="width:100%; background:var(--btn-orange); color:white; border:none; padding:10px; border-radius:10px;" onclick="toggleSettings()">Guardar</button>
+        </div>
+    </div>
+
+    <div id="display-container">
+        <div id="history"></div>
+        <div id="current-value">0</div>
+    </div>
+
+    <div id="keypad">
+        <button class="action" onmousedown="startTimer()" onmouseup="endTimer()" ontouchstart="startTimer()" ontouchend="endTimer()">AC</button>
+        <button class="action" onclick="deleteLast()">DEL</button>
+        <button class="action" onclick="performOp('%')">%</button>
+        <button class="op" onclick="performOp('/')">÷</button>
+
+        <button class="num" onclick="pressNum('7')">7</button>
+        <button class="num" onclick="pressNum('8')">8</button>
+        <button class="num" onclick="pressNum('9')">9</button>
+        <button class="op" onclick="performOp('*')">×</button>
+
+        <button class="num" onclick="pressNum('4')">4</button>
+        <button class="num" onclick="pressNum('5')">5</button>
+        <button class="num" onclick="pressNum('6')">6</button>
+        <button class="op" onclick="performOp('-')">−</button>
+
+        <button class="num" onclick="pressNum('1')">1</button>
+        <button class="num" onclick="pressNum('2')">2</button>
+        <button class="num" onclick="pressNum('3')">3</button>
+        <button class="op" onclick="performOp('+')">+</button>
+
+        <button class="num" onclick="pressNum('00')">00</button>
+        <button class="num" onclick="pressNum('0')">0</button>
+        <button class="num" onclick="pressNum('.')">.</button>
+        <button class="equal" onclick="finish()">=</button>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

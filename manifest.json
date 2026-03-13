@@ -1,0 +1,22 @@
+{
+  "name": "Calculadora Mística",
+  "short_name": "Calculadora",
+  "description": "Herramienta avanzada para mentalismo y predicciones matemáticas.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#ff9f0a",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2344/2344132.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2344/2344132.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
